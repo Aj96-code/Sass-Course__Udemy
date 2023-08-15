@@ -48,6 +48,7 @@ body {
   animation-name: moveInRight;
   animation-duration: 1s;
   animation-timing-function: ease-out;
+
 }
 
 .row {
@@ -99,6 +100,7 @@ body {
   width: calc(
       3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem
     );
+
 }
 
 .header {

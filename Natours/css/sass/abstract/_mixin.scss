@@ -4,6 +4,7 @@
   animation-timing-function: $time-function;
 }
 
+
 @mixin clearfix {
   &::after {
     /*Used to show pseudo elements*/
@@ -12,3 +13,4 @@
     clear: both;
   }
 }
+

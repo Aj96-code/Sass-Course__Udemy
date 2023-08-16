@@ -12,7 +12,6 @@
     clear: both;
   }
 }
-
 @mixin background_gradient_with_image(
   $img_url,
   $gradient_start_colour,
@@ -25,3 +24,4 @@
     ),
     url(#{$img_url});
 }
+

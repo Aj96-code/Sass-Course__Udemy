@@ -94,6 +94,10 @@ body {
   margin-bottom: 8rem;
 }
 
+.u-margin-top-large {
+  margin-top: 8rem;
+}
+
 .row {
   max-width: 114rem;
   margin: 0 auto;
@@ -249,6 +253,13 @@ body {
 }
 .btn--white::after {
   background-color: #ffffff;
+}
+.btn--green {
+  background-color: #78d56f;
+  color: #ffffff;
+}
+.btn--green::after {
+  background-color: #78d56f;
 }
 .btn--animated {
   animation-name: moveInBottom;

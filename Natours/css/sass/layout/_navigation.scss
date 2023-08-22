@@ -16,6 +16,14 @@
       /*Used to align inline & inline-block elements*/
       text-align: center;
       cursor: pointer;
+      @include responsive(tab-port) {
+        top: 4rem;
+        right: 4rem;
+      }
+      @include responsive(phone) {
+        top: 3rem;
+        left: 3rem;
+      }
     }
     &background {
       height: 6rem;
@@ -27,6 +35,14 @@
       background-image: radial-gradient($light-green, $dark-green);
       z-index: 1000;
       transition: transform 0.4s cubic-bezier(0.866, 0, 0.07, 1);
+      @include responsive(tab-port) {
+        top: 4.5rem;
+        right: 4.5rem;
+      }
+      @include responsive(phone) {
+        top: 3.5;
+        left: 3.5;
+      }
     }
     &nav {
       height: 100vh;

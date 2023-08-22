@@ -9,6 +9,9 @@
     &-box {
       text-align: center;
       margin-bottom: 8rem;
+      @include responsive(tab-port) {
+        margin-bottom: 4rem;
+      }
     }
   }
 
@@ -16,6 +19,10 @@
     border-top: 0.1rem solid $gray;
     padding-top: 2rem;
     display: inline-block;
+    @include responsive(tab-port) {
+      width: 100%;
+      text-align: center;
+    }
   }
 
   &__list {
@@ -49,8 +56,16 @@
   }
 
   &__copyright {
-    @extend .footer__navigation;
+    border-top: 0.1rem solid $gray;
+    padding-top: 2rem;
     width: 80%;
     float: right;
+    @include responsive(tab-port) {
+      width: 100%;
+      float: none;
+    }
+  }
+  @include responsive(tab-port) {
+    padding: 8rem 0;
   }
 }

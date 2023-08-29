@@ -26,7 +26,7 @@ $(OutputFile):
 	@$(SHELL) Add-Content $(OutputFile) -Value "//"; Add-Content $(OutputFile) -Value "@import" -NoNewLine; $(foreach FILE, $(RELATIVEPATH),\
 		Add-Content -Path $(OutputFile) -Value\
 		"`"$(FILE)`"," -NoNewLine;)
-	@$(SHELL) Add-Content $(OutputFile) -Value "//"; Add-Content $(OutputFile) -Value ";";
+	@$(SHELL) Add-Content $(OutputFile) -Value "//"; Add-Content $(OutputFile) -Value ";" -NoNewLine;
 
 
 sass:

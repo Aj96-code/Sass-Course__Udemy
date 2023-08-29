@@ -23,7 +23,7 @@ all: clean minimizeFile sass
 $(OutputFile):
 	@$(SHELL) [Console]::OutputEncoding = [System.text.Encoding]::UTF8
 #imports for each file found in sass directories
-	@$(SHELL) Add-Content $(OutputFile) -Value "//"; Add-Content $(OutputFile) -Value "@import"; $(foreach FILE, $(RELATIVEPATH),\
+	@$(SHELL) Add-Content $(OutputFile) -Value "//"; Add-Content $(OutputFile) -Value "@import" -NoNewLine; $(foreach FILE, $(RELATIVEPATH),\
 		Add-Content -Path $(OutputFile) -Value\
 		"`"$(FILE)`"," -NoNewLine;)
 	@$(SHELL) Add-Content $(OutputFile) -Value "//"; Add-Content $(OutputFile) -Value ";";

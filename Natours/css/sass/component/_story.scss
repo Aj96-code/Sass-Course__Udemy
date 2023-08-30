@@ -8,6 +8,12 @@
   padding-left: 9rem;
   font-size: $font-small;
   transform: skewX(-12deg);
+  @include responsive(tab-port) {
+    width: 100%;
+    padding: 4rem;
+    padding-left: 7rem;
+    transform: skewX(0);
+  }
   &__shape {
     width: 15rem;
     height: 15rem;
@@ -20,6 +26,10 @@
     it is best to use the transform
     property to provide the margin*/
     transform: translateX(-3rem) skewX(12deg);
+    position: relative;
+    @include responsive(tab-port) {
+      transform: translateX(-3rem) skewX(0);
+    }
   }
   &__img {
     height: 100%;
@@ -30,6 +40,9 @@
 
   &__text {
     transform: skewX(12deg);
+    @include responsive(tab-port) {
+      transform: skewX(0);
+    }
   }
   &__caption {
     position: absolute;

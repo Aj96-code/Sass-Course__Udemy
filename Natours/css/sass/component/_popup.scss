@@ -24,7 +24,7 @@
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.25);
     transition: all 0.4s 0.2s;
-    @include responsive(tab-port) {
+    @include responsive(tab-land) {
       display: inline-block;
     }
   }
@@ -33,14 +33,7 @@
     width: 33.333333%;
     /*Use to make the element the same height as its sibling element*/
     display: table-cell;
-    @include responsive(tab-port) {
-      background-image: linear-gradient(
-          105deg,
-          rgba($white, 0.9) 0%,
-          rgba($white, 0.9) 50%,
-          transparent 50%
-        ),
-        url(../img/nat-10.jpg);
+    @include responsive(tab-land) {
       display: inline-block;
       height: 1rem;
       width: 100%;
@@ -51,11 +44,12 @@
     display: table-cell;
     vertical-align: middle;
     padding: 3rem 5rem;
-    @include responsive(tab-port) {
+    @include responsive(tab-land) {
       display: inline-block;
       background-image: linear-gradient(
         to right,
-        rgba($white, 0.5) 0%,
+        rgba($white, 1) 0%,
+        rgba($white, 0.9) 50%,
         rgba($white, 1) 100%
       );
       width: 100%;
@@ -75,8 +69,9 @@
     column-rule: 1px solid lighten($gray, 30%);
     /*Adds hyphens (-) to an unfinished word on line breaks*/
     hyphens: auto;
-    @include responsive(tab-port) {
+    @include responsive(tab-land) {
       color: darken($gray, 30%);
+      column-count: 1;
     }
   }
   &:target &__content {

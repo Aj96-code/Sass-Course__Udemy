@@ -683,7 +683,7 @@ body {
   transform: translate(-50%, -50%) scale(0.25);
   transition: all 0.4s 0.2s;
 }
-@media (max-width: 56.25rem) {
+@media (max-width: 75rem) {
   .popup__content {
     display: inline-block;
   }
@@ -693,9 +693,8 @@ body {
   /*Use to make the element the same height as its sibling element*/
   display: table-cell;
 }
-@media (max-width: 56.25rem) {
+@media (max-width: 75rem) {
   .popup__left {
-    background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(../img/nat-10.jpg);
     display: inline-block;
     height: 1rem;
     width: 100%;
@@ -707,10 +706,10 @@ body {
   vertical-align: middle;
   padding: 3rem 5rem;
 }
-@media (max-width: 56.25rem) {
+@media (max-width: 75rem) {
   .popup__right {
     display: inline-block;
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.5) 0%, white 100%);
+    background-image: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0.9) 50%, white 100%);
     width: 100%;
     vertical-align: auto;
     padding: 1rem 2.5rem;
@@ -729,9 +728,10 @@ body {
   /*Adds hyphens (-) to an unfinished word on line breaks*/
   hyphens: auto;
 }
-@media (max-width: 56.25rem) {
+@media (max-width: 75rem) {
   .popup__text {
     color: #4d4d4d;
+    column-count: 1;
   }
 }
 .popup:target .popup__content {
@@ -972,13 +972,18 @@ body {
   position: relative;
   height: 95vh;
   /*The nearest image or to : will be at the top*/
-  background-image: linear-gradient(to bottom right, rgba(120, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-image: linear-gradient(to bottom right, rgba(120, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero-small.jpg);
   background-size: cover;
   /*Make the background always stays the top*/
   background-position: top;
   /*Defines how the polygon or shape should be. Its start from the left to right on the x y axis*/
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /*
+   * the resolution property is used to target device
+   * resolution
+   * , are used to indicate or in media queries
+  */
 }
 .header__logo-box {
   position: absolute;
@@ -996,6 +1001,11 @@ body {
   left: 50%;
   /*Centers the element*/
   transform: translate(-50%, -50%);
+}
+@media (min-resolution: 192dpi) and (min-width: 37.5rem), (min-width: 125rem) {
+  .header {
+    background-image: linear-gradient(to bottom right, rgba(120, 213, 111, 0.8), rgba(86, 67, 250, 0.8)), url(../img/hero.jpg);
+  }
 }
 @media (max-width: 37.5rem) {
   .header {

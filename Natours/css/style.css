@@ -664,6 +664,15 @@ body {
   visibility: hidden;
   transition: all 0.3s;
 }
+@supports (backdrop-filter: blur(10px)) {
+  .popup {
+    /*
+     * Check if the property is supported by the browser
+     */
+    backdrop-filter: blur(10px);
+    background-color: rgba(9, 9, 9, 0.3);
+  }
+}
 .popup:target {
   opacity: 1;
   visibility: visible;
@@ -776,19 +785,24 @@ body {
   width: 15rem;
   height: 15rem;
   float: left;
-  -webkit-shape-outside: circle(50% at 50% 50%);
-  shape-outside: circle(50% at 50% 50%);
-  -webkit-clip-path: circle(50% at 50% 50%);
-  clip-path: circle(50% at 50% 50%);
   /*When an element is floated,
   it is best to use the transform
   property to provide the margin*/
   transform: translateX(-3rem) skewX(12deg);
   position: relative;
+  overflow: hidden;
 }
 @media (max-width: 56.25rem) {
   .story__shape {
     transform: translateX(-3rem) skewX(0);
+  }
+}
+@supports (clip-path: polygon(0 0)) {
+  .story__shape {
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
   }
 }
 .story__img {
@@ -970,20 +984,25 @@ body {
 
 .header {
   position: relative;
-  height: 95vh;
+  height: 85vh;
   /*The nearest image or to : will be at the top*/
   background-image: linear-gradient(to bottom right, rgba(120, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero-small.jpg);
   background-size: cover;
   /*Make the background always stays the top*/
   background-position: top;
   /*Defines how the polygon or shape should be. Its start from the left to right on the x y axis*/
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   /*
    * the resolution property is used to target device
    * resolution
    * , are used to indicate or in media queries
   */
+}
+@supports (clip-path: polygon(0 0)) {
+  .header {
+    height: 95vh;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  }
 }
 .header__logo-box {
   position: absolute;

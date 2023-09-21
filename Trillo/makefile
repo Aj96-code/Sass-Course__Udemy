@@ -1,24 +1,13 @@
 # -*- MakeFile -*-
-#Setting a shell
 SHELL := powershell.exe
-#Syntax
-# % wildcard meaning any
-# example %.c meaning any c
-# $@ is replaced with the target
-# $^ is replaced with the dependency
-# @ does not log the what the action does
-#target: dependencies
-#	action
-BASEDIR = ./css/sass
+BASEDIR = ./sass
 GENCSS = ./css/style.css
-# Gets all the directory in base directory
 SASSDIR = $(foreach DIR, $(BASEDIR), $(wildcard $(DIR)/*))
-# Get all files that end with scss
 SASSFILESPATH = $(foreach DIR, $(SASSDIR), $(wildcard $(DIR)/*.scss))
 OutputFile := $(BASEDIR)/main.scss
 RELATIVEPATH =  $(foreach FILE, $(SASSFILESPATH), $(subst $(BASEDIR),.,$(FILE)))
 
-all: clean minimizeFile sass
+all: clean minimizeFile
 
 $(OutputFile):
 	@$(SHELL) [Console]::OutputEncoding = [System.text.Encoding]::UTF8
@@ -29,8 +18,6 @@ $(OutputFile):
 	@$(SHELL) Add-Content $(OutputFile) -Value "//" -NoNewLine ; Add-Content $(OutputFile) -Value ";" -NoNewLine;
 
 
-sass:
-	@$(SHELL) sass --watch $(OutputFile):$(GENCSS)
 
 clean:
 	@$(SHELL) rm css/style.*
